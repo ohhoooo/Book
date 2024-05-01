@@ -32,6 +32,7 @@
 		379E7BAE2BE20DA200BA768F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		379E7BC72BE235C500BA768F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		379E7BCB2BE2391800BA768F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		379E7BCD2BE24FC800BA768F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 				379E7BA52BE20D6300BA768F /* LaunchScreen.storyboard */,
 				379E7BA82BE20D6300BA768F /* Info.plist */,
 				379E7BA02BE20D6200BA768F /* Book.xcdatamodeld */,
+				379E7BCD2BE24FC800BA768F /* Config.xcconfig */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 /* Begin XCBuildConfiguration section */
 		379E7BA92BE20D6300BA768F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 379E7BCD2BE24FC800BA768F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -255,6 +258,7 @@
 		};
 		379E7BAA2BE20D6300BA768F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 379E7BCD2BE24FC800BA768F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
