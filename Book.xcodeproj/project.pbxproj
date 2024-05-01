@@ -16,6 +16,7 @@
 		379E7BA72BE20D6300BA768F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379E7BA52BE20D6300BA768F /* LaunchScreen.storyboard */; };
 		379E7BAF2BE20DA200BA768F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 379E7BAE2BE20DA200BA768F /* .gitignore */; };
 		379E7BC82BE235C500BA768F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7BC72BE235C500BA768F /* Response.swift */; };
+		379E7BCC2BE2391800BA768F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7BCB2BE2391800BA768F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		379E7BA82BE20D6300BA768F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379E7BAE2BE20DA200BA768F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		379E7BC72BE235C500BA768F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		379E7BCB2BE2391800BA768F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				379E7BC72BE235C500BA768F /* Response.swift */,
+				379E7BCB2BE2391800BA768F /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379E7BCC2BE2391800BA768F /* NetworkManager.swift in Sources */,
 				379E7BA22BE20D6200BA768F /* Book.xcdatamodeld in Sources */,
 				379E7B9C2BE20D6200BA768F /* ViewController.swift in Sources */,
 				379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */,
