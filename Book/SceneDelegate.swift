@@ -16,7 +16,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let searchViewController = SearchViewController()
+        let navigationController = UINavigationController(rootViewController: searchViewController)
+
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([navigationController], animated: true)
+        
+        if let items = tabBarController.tabBar.items {
+            items[0].image = UIImage(systemName: "magnifyingglass")
+        }
+        
+        tabBarController.tabBar.items?.forEach {
+            $0.title = nil
+        }
+        
+        tabBarController.tabBar.backgroundColor = .white
+        tabBarController.tabBar.tintColor = .black
+        tabBarController.tabBar.unselectedItemTintColor = .black
+        tabBarController.tabBar.itemPositioning = .centered
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
