@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let searchViewController = SearchViewController()
         let navigationController = UINavigationController(rootViewController: searchViewController)
 
+        // 위로 슬라이드 시 네비게이션 바의 밑줄(선)을 제거
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([navigationController], animated: true)
         

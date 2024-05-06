@@ -19,7 +19,12 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureNavigationBar()
     }
     
     // MARK: - methods
+    private func configureNavigationBar() {
+        self.navigationItem.titleView = searchView.searchBar
+    }
 }
