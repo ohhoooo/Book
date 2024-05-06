@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3766B6202BE8E96D0009A47F /* SearchResultBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B61F2BE8E96D0009A47F /* SearchResultBookCell.swift */; };
 		378BD6812BE4C7400016E511 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 378BD6802BE4C7400016E511 /* SnapKit */; };
 		379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7B972BE20D6200BA768F /* AppDelegate.swift */; };
 		379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7B992BE20D6200BA768F /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3766B61F2BE8E96D0009A47F /* SearchResultBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultBookCell.swift; sourceTree = "<group>"; };
 		379E7B942BE20D6200BA768F /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379E7B972BE20D6200BA768F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379E7B992BE20D6200BA768F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3766B61E2BE8E8DD0009A47F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3766B61F2BE8E96D0009A47F /* SearchResultBookCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		379E7B8B2BE20D6200BA768F = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		37BFC90C2BE39A15008E1960 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3766B61E2BE8E8DD0009A47F /* Cell */,
 				37BFC90E2BE39A43008E1960 /* SearchView.swift */,
 			);
 			path = View;
@@ -196,6 +207,7 @@
 				37BFC9112BE39A56008E1960 /* SearchViewController.swift in Sources */,
 				379E7B9C2BE20D6200BA768F /* ViewController.swift in Sources */,
 				37BFC90F2BE39A43008E1960 /* SearchView.swift in Sources */,
+				3766B6202BE8E96D0009A47F /* SearchResultBookCell.swift in Sources */,
 				379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */,
 				379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */,
 				379E7BC82BE235C500BA768F /* Response.swift in Sources */,
