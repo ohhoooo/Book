@@ -39,6 +39,10 @@ final class SearchResultBookCell: UICollectionViewCell {
     // MARK: - life cycles
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        imageView.image = UIImage()
+        titleLabel.text = nil
+        authorsLabel.text = nil
     }
     
     // MARK: - methods
