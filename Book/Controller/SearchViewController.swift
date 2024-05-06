@@ -29,11 +29,16 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureSearchBar()
         configureNavigationBar()
         configureCollectionView()
     }
     
     // MARK: - methods
+    private func configureSearchBar() {
+        self.searchView.searchBar.delegate = self
+    }
+    
     private func configureNavigationBar() {
         self.navigationItem.titleView = searchView.searchBar
     }
@@ -63,6 +68,16 @@ final class SearchViewController: UIViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, !text.isEmpty {
+            searchBar.resignFirstResponder()
+            self.query = text
+            fetchSearchResultBooks()
         }
     }
 }
