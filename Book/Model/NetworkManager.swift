@@ -28,7 +28,7 @@ final class NetworkManager {
     
     // MARK: - methods
     func fetchBooks(query: String, sort: Sort, page: Int, completion: @escaping ((Result<Response, Error>) -> Void)) {
-        guard let url = URL(string: "\(basedUrl)?query=\(query)&sort=\(Sort.latest)&page=\(page)&size=9") else {
+        guard let url = URL(string: "\(basedUrl)?query=\(query)&sort=\(Sort.latest)&page=\(page)&size=12") else {
             return
         }
         
