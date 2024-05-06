@@ -51,13 +51,13 @@ final class SearchView: UIView {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { sectionIndex, _ in
+        return UICollectionViewCompositionalLayout { [self] sectionIndex, _ in
             switch sectionIndex {
             default:
                 // item
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.0), heightDimension: .fractionalWidth(1.0/3.0 * 1.5))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
                 
                 // group
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: itemSize.heightDimension)
@@ -65,6 +65,7 @@ final class SearchView: UIView {
                 
                 // section
                 let section = NSCollectionLayoutSection(group: group)
+                section.boundarySupplementaryItems = [createHeader()]
                 
                 return section
             }
@@ -73,7 +74,7 @@ final class SearchView: UIView {
     
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(57.0)),
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50.0)),
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )

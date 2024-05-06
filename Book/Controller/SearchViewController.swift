@@ -48,6 +48,7 @@ final class SearchViewController: UIViewController {
         self.searchView.collectionView.dataSource = self
         
         self.searchView.collectionView.register(SearchResultBookCell.self, forCellWithReuseIdentifier: "SearchResultBookCell")
+        self.searchView.collectionView.register(SearchResultBookHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchResultBookHeaderView")
     }
     
     private func fetchSearchResultBooks() {
@@ -91,6 +92,21 @@ extension SearchViewController: UICollectionViewDelegate {
 }
 
 extension SearchViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SearchResultBookHeaderView", for: indexPath) as? SearchResultBookHeaderView else {
+                return UICollectionReusableView()
+            }
+            
+            header.prepare(text: "검색 결과")
+            
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
