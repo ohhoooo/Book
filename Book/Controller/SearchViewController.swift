@@ -8,7 +8,7 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
-
+    
     // MARK: - properties
     private let searchView = SearchView()
     
@@ -82,6 +82,15 @@ extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == searchResultBooks.count - 1 && isEnd == false {
             fetchSearchResultBooks()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let bookDetailVC = BookDetailViewController()
+            bookDetailVC.bind(book: searchResultBooks[indexPath.row])
+            
+            self.present(bookDetailVC, animated: true)
         }
     }
 }
