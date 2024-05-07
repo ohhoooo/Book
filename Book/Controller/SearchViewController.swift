@@ -30,17 +30,12 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         configureSearchBar()
-        configureNavigationBar()
         configureCollectionView()
     }
     
     // MARK: - methods
     private func configureSearchBar() {
         self.searchView.searchBar.delegate = self
-    }
-    
-    private func configureNavigationBar() {
-        self.navigationItem.titleView = searchView.searchBar
     }
     
     private func configureCollectionView() {

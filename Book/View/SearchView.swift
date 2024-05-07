@@ -15,6 +15,7 @@ final class SearchView: UIView {
         let searchBar = UISearchBar()
         searchBar.placeholder = "원하는 책을 입력하세요"
         searchBar.backgroundColor = .white
+        searchBar.searchBarStyle = .minimal
         return searchBar
     }()
     
@@ -42,11 +43,18 @@ final class SearchView: UIView {
     }
     
     private func configureConstraints() {
+        self.addSubview(searchBar)
         self.addSubview(collectionView)
         
-        collectionView.snp.makeConstraints {
-            $0.top.bottom.equalTo(self.safeAreaLayoutGuide)
+        searchBar.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide.snp.top)
             $0.leading.trailing.equalToSuperview()
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(self.searchBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
