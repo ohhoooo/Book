@@ -12,6 +12,10 @@ final class BookDetailViewController: UIViewController {
     // MARK: - properties
     private let bookDetailView = BookDetailView()
     
+    private let coreDataStorage = CoreDataSavedBookStorage.shared
+    
+    private var book: Book?
+    
     // MARK: - life cycles
     override func loadView() {
         view = self.bookDetailView
@@ -21,6 +25,7 @@ final class BookDetailViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureAddTarget()
     }
     
     // MARK: - methods
@@ -29,6 +34,19 @@ final class BookDetailViewController: UIViewController {
             sheetPresentationController.detents = [ .large()]
         }
         sheetPresentationController?.prefersGrabberVisible = true
+    }
+    
+    private func configureAddTarget() {
+        bookDetailView.cancelButton.addTarget(self, action: #selector(didTappedCancelButton), for: .touchUpInside)
+        bookDetailView.addButton.addTarget(self, action: #selector(didTappedAddButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTappedCancelButton() {
+        
+    }
+    
+    @objc private func didTappedAddButton() {
+        
     }
     
     func bind(book: Book) {
