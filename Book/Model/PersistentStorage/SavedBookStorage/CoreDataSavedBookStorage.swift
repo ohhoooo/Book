@@ -23,6 +23,27 @@ final class CoreDataSavedBookStorage {
     private lazy var context = appDelegate?.persistentContainer.viewContext
     
     // MARK: - methods
+    func saveBook(book: Book, thumbnail: Data?, completion: @escaping (Result<SavedBook, Error>) -> Void) {
+        if self.contains(book: book) {
+            completion(.failure(CoreDataError.existingItemError))
+            return
+        }
+        
+        if let context = context {
+            if let entity = NSEntityDescription.entity(forEntityName: self.modelName, in: context) {
+                if let savedBook = NSManagedObject(entity: entity, insertInto: context) as? SavedBook {
+                    savedBook.title = book.title
+                    savedBook.authors = book.authors.first
+                    savedBook.price = Int16(book.price)
+                    savedBook.thumbnail = thumbnail
+                    
+                    appDelegate?.saveContext()
+                    completion(.success(savedBook))
+                }
+            }
+        }
+    }
+    
     private func contains(book: Book) -> Bool {
         if let context = context {
             let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
