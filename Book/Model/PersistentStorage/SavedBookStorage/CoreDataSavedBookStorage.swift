@@ -52,7 +52,7 @@ final class CoreDataSavedBookStorage {
                 if let savedBook = NSManagedObject(entity: entity, insertInto: context) as? SavedBook {
                     savedBook.title = book.title
                     savedBook.authors = book.authors.first
-                    savedBook.price = Int16(book.price)
+                    savedBook.price = Int16(clamping: book.price)
                     savedBook.thumbnail = thumbnail
                     
                     appDelegate?.saveContext()

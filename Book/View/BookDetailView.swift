@@ -43,7 +43,7 @@ final class BookDetailView: UIView {
         return label
     }()
     
-    private let thumbnailImageView: UIImageView = {
+    let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
