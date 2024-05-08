@@ -42,7 +42,7 @@ final class BookDetailViewController: UIViewController {
     }
     
     @objc private func didTappedCancelButton() {
-        
+        self.dismiss(animated: true)
     }
     
     @objc private func didTappedAddButton() {
