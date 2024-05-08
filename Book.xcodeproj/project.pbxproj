@@ -14,6 +14,8 @@
 		3766B6292BE92F140009A47F /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B6282BE92F140009A47F /* BookDetailViewController.swift */; };
 		3766B62D2BE9F7F70009A47F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B62C2BE9F7F70009A47F /* String+Extension.swift */; };
 		3766B62F2BE9FAEB0009A47F /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B62E2BE9FAEB0009A47F /* Int+Extension.swift */; };
+		3766B64A2BEB5B920009A47F /* SavedBook+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B6482BEB5B920009A47F /* SavedBook+CoreDataClass.swift */; };
+		3766B64B2BEB5B920009A47F /* SavedBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766B6492BEB5B920009A47F /* SavedBook+CoreDataProperties.swift */; };
 		378BD6812BE4C7400016E511 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 378BD6802BE4C7400016E511 /* SnapKit */; };
 		379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7B972BE20D6200BA768F /* AppDelegate.swift */; };
 		379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7B992BE20D6200BA768F /* SceneDelegate.swift */; };
@@ -36,6 +38,8 @@
 		3766B6282BE92F140009A47F /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		3766B62C2BE9F7F70009A47F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3766B62E2BE9FAEB0009A47F /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		3766B6482BEB5B920009A47F /* SavedBook+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedBook+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3766B6492BEB5B920009A47F /* SavedBook+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		379E7B942BE20D6200BA768F /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379E7B972BE20D6200BA768F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379E7B992BE20D6200BA768F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,33 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		3766B63D2BEB58CB0009A47F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				379E7BC72BE235C500BA768F /* Response.swift */,
+				379E7BCB2BE2391800BA768F /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3766B63E2BEB58D60009A47F /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				3766B63F2BEB594B0009A47F /* CoreData */,
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		3766B63F2BEB594B0009A47F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				379E7BA02BE20D6200BA768F /* Book.xcdatamodeld */,
+				3766B6482BEB5B920009A47F /* SavedBook+CoreDataClass.swift */,
+				3766B6492BEB5B920009A47F /* SavedBook+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		379E7B8B2BE20D6200BA768F = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +153,6 @@
 				379E7BA32BE20D6300BA768F /* Assets.xcassets */,
 				379E7BA52BE20D6300BA768F /* LaunchScreen.storyboard */,
 				379E7BA82BE20D6300BA768F /* Info.plist */,
-				379E7BA02BE20D6200BA768F /* Book.xcdatamodeld */,
 				379E7BCD2BE24FC800BA768F /* Config.xcconfig */,
 			);
 			path = Book;
@@ -131,8 +161,8 @@
 		379E7BC62BE235BB00BA768F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				379E7BC72BE235C500BA768F /* Response.swift */,
-				379E7BCB2BE2391800BA768F /* NetworkManager.swift */,
+				3766B63D2BEB58CB0009A47F /* Network */,
+				3766B63E2BEB58D60009A47F /* PersistentStorage */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +271,7 @@
 				379E7BA22BE20D6200BA768F /* Book.xcdatamodeld in Sources */,
 				3766B6292BE92F140009A47F /* BookDetailViewController.swift in Sources */,
 				3766B62F2BE9FAEB0009A47F /* Int+Extension.swift in Sources */,
+				3766B64A2BEB5B920009A47F /* SavedBook+CoreDataClass.swift in Sources */,
 				37BFC9112BE39A56008E1960 /* SearchViewController.swift in Sources */,
 				379E7B9C2BE20D6200BA768F /* ViewController.swift in Sources */,
 				37BFC90F2BE39A43008E1960 /* SearchView.swift in Sources */,
@@ -250,6 +281,7 @@
 				379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */,
 				3766B6272BE92EFF0009A47F /* BookDetailView.swift in Sources */,
 				379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */,
+				3766B64B2BEB5B920009A47F /* SavedBook+CoreDataProperties.swift in Sources */,
 				379E7BC82BE235C500BA768F /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
