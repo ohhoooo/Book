@@ -9,4 +9,5 @@ import Foundation
 
 enum CoreDataError: Error {
     case existingItemError
+    case notfoundItemError
 }
