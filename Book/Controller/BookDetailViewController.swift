@@ -81,7 +81,9 @@ final class BookDetailViewController: UIViewController {
     
     func printCheckAlert(title: String) {
         let alertVC = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let checkAction = UIAlertAction(title: "확인", style: .default)
+        let checkAction = UIAlertAction(title: "확인", style: .default) { _ in
+            self.dismiss(animated: true)
+        }
         
         alertVC.addAction(checkAction)
         
