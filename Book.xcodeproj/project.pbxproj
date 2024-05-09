@@ -35,6 +35,7 @@
 		37D509E92BEC8F8800113F8F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509E82BEC8F8800113F8F /* CartViewController.swift */; };
 		37D509EB2BECA1D000113F8F /* SavedBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509EA2BECA1D000113F8F /* SavedBookCell.swift */; };
 		37D50A0C2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D50A0B2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift */; };
+		37D50A0E2BED3C7400113F8F /* RecentViewedBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D50A0D2BED3C7400113F8F /* RecentViewedBookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		37D509E82BEC8F8800113F8F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		37D509EA2BECA1D000113F8F /* SavedBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBookCell.swift; sourceTree = "<group>"; };
 		37D50A0B2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRecentViewedBookStorage.swift; sourceTree = "<group>"; };
+		37D50A0D2BED3C7400113F8F /* RecentViewedBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewedBookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				3766B61F2BE8E96D0009A47F /* SearchResultBookCell.swift */,
 				37D509EA2BECA1D000113F8F /* SavedBookCell.swift */,
+				37D50A0D2BED3C7400113F8F /* RecentViewedBookCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */,
 				3766B6272BE92EFF0009A47F /* BookDetailView.swift in Sources */,
 				379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */,
+				37D50A0E2BED3C7400113F8F /* RecentViewedBookCell.swift in Sources */,
 				3766B64B2BEB5B920009A47F /* SavedBook+CoreDataProperties.swift in Sources */,
 				37D509E72BEC8F4600113F8F /* CartView.swift in Sources */,
 				379E7BC82BE235C500BA768F /* Response.swift in Sources */,
