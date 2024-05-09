@@ -13,6 +13,10 @@ final class CartViewController: UIViewController {
     // MARK: - properties
     private let cartView = CartView()
     
+    private let coreDataStorage = CoreDataSavedBookStorage.shared
+    
+    private var books: [SavedBook] = []
+    
     // MARK: - life cycles
     override func loadView() {
         view = self.cartView
@@ -20,7 +24,12 @@ final class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureData()
     }
     
     // MARK: - methods
+    private func configureData() {
+        books = coreDataStorage.fetchSavedBooks()
+    }
 }

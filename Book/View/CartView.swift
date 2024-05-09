@@ -80,7 +80,7 @@ final class CartView: UIView {
         }
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(self.bookAdditionButton.snp.bottom)
+            $0.top.equalTo(self.bookAdditionButton.snp.bottom).offset(14)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
