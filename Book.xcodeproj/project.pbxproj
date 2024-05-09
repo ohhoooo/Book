@@ -34,6 +34,7 @@
 		37D509E72BEC8F4600113F8F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509E62BEC8F4600113F8F /* CartView.swift */; };
 		37D509E92BEC8F8800113F8F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509E82BEC8F8800113F8F /* CartViewController.swift */; };
 		37D509EB2BECA1D000113F8F /* SavedBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509EA2BECA1D000113F8F /* SavedBookCell.swift */; };
+		37D50A0C2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D50A0B2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		37D509E62BEC8F4600113F8F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		37D509E82BEC8F8800113F8F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		37D509EA2BECA1D000113F8F /* SavedBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBookCell.swift; sourceTree = "<group>"; };
+		37D50A0B2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRecentViewedBookStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				3766B63F2BEB594B0009A47F /* CoreData */,
 				3766B64C2BEB663E0009A47F /* SavedBookStorage */,
+				37D50A0A2BED391000113F8F /* RecentViewedBookStorage */,
 			);
 			path = PersistentStorage;
 			sourceTree = "<group>";
@@ -210,6 +213,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		37D50A0A2BED391000113F8F /* RecentViewedBookStorage */ = {
+			isa = PBXGroup;
+			children = (
+				37D50A0B2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift */,
+			);
+			path = RecentViewedBookStorage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,6 +303,7 @@
 			files = (
 				3766B64E2BEB678B0009A47F /* CoreDataSavedBookStorage.swift in Sources */,
 				379E7BCC2BE2391800BA768F /* NetworkManager.swift in Sources */,
+				37D50A0C2BED397700113F8F /* UserDefaultsRecentViewedBookStorage.swift in Sources */,
 				379E7BA22BE20D6200BA768F /* Book.xcdatamodeld in Sources */,
 				3766B6292BE92F140009A47F /* BookDetailViewController.swift in Sources */,
 				3766B62F2BE9FAEB0009A47F /* Int+Extension.swift in Sources */,
