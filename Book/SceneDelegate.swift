@@ -19,22 +19,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let searchViewController = SearchViewController()
+        let cartViewController = CartViewController()
 
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([searchViewController], animated: true)
+        tabBarController.setViewControllers([searchViewController, cartViewController], animated: true)
         
         if let items = tabBarController.tabBar.items {
             items[0].image = UIImage(systemName: "magnifyingglass")
-        }
-        
-        tabBarController.tabBar.items?.forEach {
-            $0.title = nil
+            items[1].image = UIImage(systemName: "cart")
+            items[0].title = "검색"
+            items[1].title = "장바구니"
         }
         
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.tabBar.tintColor = .black
         tabBarController.tabBar.unselectedItemTintColor = .black
-        tabBarController.tabBar.itemPositioning = .centered
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController
