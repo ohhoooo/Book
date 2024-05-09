@@ -82,6 +82,25 @@ final class CoreDataSavedBookStorage {
         }
     }
     
+    func deleteAllBooks(completion: @escaping ((Result<[SavedBook], Error>) -> Void)) {
+        if let context = context {
+            let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
+            
+            do {
+                if let fetchedSavedBooks = try context.fetch(request) as? [SavedBook] {
+                    fetchedSavedBooks.forEach {
+                        context.delete($0)
+                    }
+                    appDelegate?.saveContext()
+                    
+                    completion(.success(fetchSavedBooks()))
+                }
+            } catch {
+                completion(.failure(CoreDataError.notfoundItemError))
+            }
+        }
+    }
+    
     private func contains(book: Book) -> Bool {
         if let context = context {
             let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
