@@ -61,6 +61,24 @@ final class SearchView: UIView {
     private func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { [self] sectionIndex, _ in
             switch sectionIndex {
+            case 0:
+                // item
+                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(120), heightDimension: .absolute(40))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+                
+                // group
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: itemSize.heightDimension)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                group.interItemSpacing = .fixed(-20)
+                
+                // section
+                let section = NSCollectionLayoutSection(group: group)
+                section.interGroupSpacing = -92
+                section.orthogonalScrollingBehavior = .continuous
+                section.boundarySupplementaryItems = [createHeader()]
+                
+                return section
             default:
                 // item
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.0), heightDimension: .fractionalWidth(1.0/3.0 * 1.5))
