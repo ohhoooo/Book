@@ -31,6 +31,8 @@
 		379E7BCC2BE2391800BA768F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E7BCB2BE2391800BA768F /* NetworkManager.swift */; };
 		37BFC90F2BE39A43008E1960 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFC90E2BE39A43008E1960 /* SearchView.swift */; };
 		37BFC9112BE39A56008E1960 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFC9102BE39A56008E1960 /* SearchViewController.swift */; };
+		37D509E72BEC8F4600113F8F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509E62BEC8F4600113F8F /* CartView.swift */; };
+		37D509E92BEC8F8800113F8F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D509E82BEC8F8800113F8F /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		379E7BCD2BE24FC800BA768F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		37BFC90E2BE39A43008E1960 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		37BFC9102BE39A56008E1960 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		37D509E62BEC8F4600113F8F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		37D509E82BEC8F8800113F8F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 				3766B62A2BE92F230009A47F /* Header */,
 				37BFC90E2BE39A43008E1960 /* SearchView.swift */,
 				3766B6262BE92EFF0009A47F /* BookDetailView.swift */,
+				37D509E62BEC8F4600113F8F /* CartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				37BFC9102BE39A56008E1960 /* SearchViewController.swift */,
 				3766B6282BE92F140009A47F /* BookDetailViewController.swift */,
+				37D509E82BEC8F8800113F8F /* CartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,11 +299,13 @@
 				37BFC90F2BE39A43008E1960 /* SearchView.swift in Sources */,
 				3766B62D2BE9F7F70009A47F /* String+Extension.swift in Sources */,
 				3766B6202BE8E96D0009A47F /* SearchResultBookCell.swift in Sources */,
+				37D509E92BEC8F8800113F8F /* CartViewController.swift in Sources */,
 				3766B6252BE9263B0009A47F /* SearchResultBookHeaderView.swift in Sources */,
 				379E7B982BE20D6200BA768F /* AppDelegate.swift in Sources */,
 				3766B6272BE92EFF0009A47F /* BookDetailView.swift in Sources */,
 				379E7B9A2BE20D6200BA768F /* SceneDelegate.swift in Sources */,
 				3766B64B2BEB5B920009A47F /* SavedBook+CoreDataProperties.swift in Sources */,
+				37D509E72BEC8F4600113F8F /* CartView.swift in Sources */,
 				379E7BC82BE235C500BA768F /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
