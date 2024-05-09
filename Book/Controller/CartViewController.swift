@@ -25,20 +25,26 @@ final class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureData()
         configureTableView()
     }
     
-    // MARK: - methods
-    private func configureData() {
-        books = coreDataStorage.fetchSavedBooks()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureData()
+        cartView.tableView.reloadData()
     }
     
+    // MARK: - methods
     private func configureTableView() {
         cartView.tableView.delegate = self
         cartView.tableView.dataSource = self
         
         cartView.tableView.register(SavedBookCell.self, forCellReuseIdentifier: "SavedBookCell")
+    }
+    
+    private func configureData() {
+        books = coreDataStorage.fetchSavedBooks()
     }
 }
 
