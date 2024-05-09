@@ -26,6 +26,7 @@ final class CartViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView()
+        configureAddTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +42,44 @@ final class CartViewController: UIViewController {
         cartView.tableView.dataSource = self
         
         cartView.tableView.register(SavedBookCell.self, forCellReuseIdentifier: "SavedBookCell")
+    }
+    
+    private func configureAddTarget() {
+        cartView.allBooksDeletionButton.addTarget(self, action: #selector(didTappedAllBooksDeleteionButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTappedAllBooksDeleteionButton() {
+        let alertVC = UIAlertController(title: "정말로 삭제 하시겠습니까?", message: nil, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let checkAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            
+            coreDataStorage.deleteAllBooks { [weak self] result in
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let savedBooks):
+                    if savedBooks.isEmpty {
+                        books = savedBooks
+                        cartView.tableView.reloadData()
+                        printCheckAlert(title: "삭제를 완료 하였습니다.")
+                    }
+                case .failure(let error):
+                    switch error {
+                    case CoreDataError.notfoundItemError:
+                        printCheckAlert(title: "해당 책을 찾을 수 없습니다.")
+                    default:
+                        printCheckAlert(title: "알 수 없는 오류입니다.")
+                    }
+                }
+            }
+        }
+        
+        alertVC.addAction(cancelAction)
+        alertVC.addAction(checkAction)
+        
+        self.present(alertVC, animated: true)
     }
     
     private func configureData() {
